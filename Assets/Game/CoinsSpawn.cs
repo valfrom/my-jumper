@@ -6,12 +6,12 @@ public class CoinsSpawn : MonoBehaviour {
 	public GameObject coin;
 
 	private Vector2 velocity;
-    private GameObject cam;
+    private GameObject run;
     public float smoothTimeY;
 	public float smoothTimeX;
 
 	void Start() {
-        cam = GameObject.FindGameObjectWithTag("Run");
+        run = GameObject.FindGameObjectWithTag("Run");
 		StartCoroutine (Inst ());
 	}
 
@@ -23,8 +23,8 @@ public class CoinsSpawn : MonoBehaviour {
 		
 	void FixedUpdate(){
         
-        float posX = Mathf.SmoothDamp(transform.position.x, cam.transform.position.x, ref velocity.x, smoothTimeX);
-        float posY = Mathf.SmoothDamp(transform.position.y, cam.transform.position.y, ref velocity.y, smoothTimeY);
+        float posX = Mathf.SmoothDamp(transform.position.x, run.transform.position.x, ref velocity.x, smoothTimeX);
+        float posY = Mathf.SmoothDamp(transform.position.y, run.transform.position.y, ref velocity.y, smoothTimeY);
 
         transform.position = new Vector3(posX + Random.Range(-5, 5), posY+20 , transform.position.z);
     }

@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraFollowing : MonoBehaviour {
 
 	private GameObject cam;
-	private int speed=2;
+	private int speed = 2;
 
 	private Vector2 velocity;
 
@@ -13,8 +13,10 @@ public class CameraFollowing : MonoBehaviour {
 	public GameObject jumper;
 
 	void Start () {
-		cam = (GameObject)this.gameObject; //знаходить камеру
-		jumper = GameObject.FindGameObjectWithTag ("Jumper");  //знаходить  Jumper
+        //знаходить камеру
+        cam = (GameObject)this.gameObject;
+        //знаходить  Jumper
+        jumper = GameObject.FindGameObjectWithTag ("Jumper");  
 	}
 
 	void Update () {
@@ -25,7 +27,7 @@ public class CameraFollowing : MonoBehaviour {
 	void FixedUpdate(){
 		//камера орієнтується на Jumper, показуючи його 
 		float posX = Mathf.SmoothDamp (transform.position.x, jumper.transform.position.x, ref velocity.x, smoothTimeX);
-		float posY = Mathf.SmoothDamp (transform.position.y,jumper.transform.position.y, ref velocity .y, smoothTimeY );
+		float posY = Mathf.SmoothDamp (transform.position.y, jumper.transform.position.y, ref velocity.y, smoothTimeY);
 			
 		transform.position = new Vector3 (posX, posY, transform.position.z);
 	}

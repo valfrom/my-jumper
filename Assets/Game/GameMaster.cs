@@ -7,7 +7,8 @@ public class GameMaster : MonoBehaviour {
 
 	public Text pointsText;
 	 
-	void Update()	{
+	void Update()
+	{
 		pointsText.text = ("Points: " + points);
 	}
 }

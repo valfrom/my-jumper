@@ -21,7 +21,7 @@ public class CoinsSpawn : MonoBehaviour {
 		Repeat ();
 	}
 		
-	void FixedUpdate(){
+	void FixedUpdate() {
         
         float posX = Mathf.SmoothDamp(transform.position.x, cam.transform.position.x, ref velocity.x, smoothTimeX);
         float posY = Mathf.SmoothDamp(transform.position.y, cam.transform.position.y, ref velocity.y, smoothTimeY);
